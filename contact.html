@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="view-transition" content="same-origin" />
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "#0d0d0d">
+    <meta content='#0d0d0d' name='theme-color'/> 
+    <title>Contact CJ</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+        
+    <div class="div">
+        <div class="inner">
+            <div class="menubtn" id="menubtn" onclick="menu()">
+                <p><span>●</span> Menu</p>
+            </div>
+
+            <div class="mainmenu" id="mainmenu">
+                <div class="content">
+                    <div class="menus"> Home</div>
+                    <div class="menus">Work</div>
+                    <div class="menus">About</div>
+                    <div class="menus">Contact</div>
+                </div>
+
+ 
+            </div>
+
+
+            <div class="atthetop">
+                <div class="flex1">
+                    <div class="text"><p onclick="navigateToPortfolio()">Portfolio</p></div>
+                    <div class="text" id="load-about"><p onclick="navigateToAbout()">About</p></div>
+                    <div class="text"><p>Contact</p></div>
+                </div>
+                
+                <div class="flex2">
+                    <div class="text2"><p>Frontend Developer</p></div>
+                    <div class="text" onclick="navigateToHome()""><p>CJ Crafted ®</p></div>
+      
+                </div>
+            </div>
+
+            <div class="titletext">
+
+                <p class="deux">Cr</p>
+
+            </div>
+<div class="side">
+    <p><span class="split">Hey</span> I'm <span class="field">name*</span>. Here's my <span class="field">email*</span>. I would like <span class="field">service*</span></p>
+</div>
+
+<div class="leftie">
+    <p>Click the Fields </p>
+</div>
+        </div>
+    </div>
+
+
+    <div id="overlay" class="overlay">
+        <div id="loading"></div>
+        
+    
+    <div class="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    </div>
+       
+       <div id="layover"></div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menubtn = document.getElementById('menubtn');
+            var atthetop = document.querySelector('.atthetop');
+        
+            // Hide the menubtn for the first 0.7 seconds
+            setTimeout(function() {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            menubtn.classList.remove('show');
+                            menubtn.classList.add('hide');
+                        } else {
+                            menubtn.classList.remove('hide');
+                            menubtn.classList.add('show');
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+        
+                observer.observe(atthetop);
+                
+                // Check the initial scroll position
+                if (window.scrollY > 0) {
+                    menubtn.classList.add('show');
+                }
+            }, 0); // 700 milliseconds delay
+        });
+        
+        
+        </script>
+
+<script>
+    function navigateToAbout() {
+        var overlay = document.getElementById('overlay');
+        var layover = document.getElementById('layover');
+        overlay.style.display = 'block';
+        layover.style.display = 'block';
+        setTimeout(function() {
+            window.location.href = 'about.html';
+        }, 1300); 
+
+    }
+
+    var preloadPage = new Image();
+    preloadPage.src = 'about.html';
+</script>
+
+
+
+<script>
+function navigateToHome() {
+    var overlay = document.getElementById('overlay');
+    var layover = document.getElementById('layover');
+    overlay.style.display = 'block';
+    layover.style.display = 'block';
+    setTimeout(function() {
+        window.location.href = 'index.html';
+    }, 1300); 
+
+}
+
+var preloadPage = new Image();
+preloadPage.src = 'index.html';
+</script>
+    
+
+<script>
+    function navigateToPortfolio() {
+        var overlay = document.getElementById('overlay');
+        var layover = document.getElementById('layover');
+        overlay.style.display = 'block';
+        layover.style.display = 'block';
+        setTimeout(function() {
+            window.location.href = 'portfolio.html';
+        }, 1300); 
+
+    }
+
+    var preloadPage = new Image();
+    preloadPage.src = 'index.html';
+</script>
+
+
+</body>
+</html>

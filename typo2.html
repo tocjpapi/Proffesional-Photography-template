@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="view-transition" content="same-origin" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0d0d0d">
+    <meta content='#0d0d0d' name='theme-color'/> 
+    <link rel="shortcut icon" href="image.png" type="image/x-icon">
+    <title>My lil' Typography</title>
+    <style>
+        *,
+        *:before,
+        *:after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        html {
+            font-size: calc(100vw / 1512 * 10);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa; 
+            font-family: Neue Montreal, sans-serif;
+            overflow: hidden;
+            transition: background-color 1s ease, color 1s ease;
+        }
+
+        .animation-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            
+        }
+
+        .text-section {
+            margin-bottom: 1rem;
+            position: absolute;
+            opacity: 0;
+            overflow: hidden;
+        }
+
+        .text-element {
+            font-size: 40px;
+            font-weight: 400;
+            margin: 0 0.5rem;
+            white-space: nowrap;
+            animation: come 1.2s 1.2s ease forwards;
+        }
+
+        .text-section2 {
+            margin-bottom: 1rem;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .text-element2 {
+            font-size: 40px;
+            font-weight: 400;
+            margin: 0 10px;
+            white-space: nowrap;
+        }
+
+        .word-spaced {
+            margin: 0 0.5rem;
+        }
+
+        .bank {
+            position: absolute;
+            left: 25px;
+            font-family: Sf pro text;
+            bottom: 20px;
+            cursor: default;
+        }
+
+        .bank p {
+            font-size: 50px;
+        }
+
+        .bank:hover .no {
+            opacity: 1;
+        }
+
+        .buritto{
+            height: 100vh;
+            width: 100vw;
+            color: #495057;
+
+        }
+
+        @keyframes fromscale{
+            from{
+               opacity: 0;
+            }
+
+             to{
+                opacity: 1;
+             }
+        }
+
+        .all{
+            animation: fromscale 1.2s ease;
+        }
+
+        .bank2 {
+            position: absolute;
+            right: 25px;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 100;
+            bottom: 20px;
+            font-size: medium;
+        }
+
+        .bank2 p:hover .lo {
+            opacity: 0;
+        }
+
+        .lo {
+            padding-right: 7px;
+            transition: 0.5s ease;
+            cursor: pointer;
+        }
+
+        .topleft {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: medium;
+            cursor: pointer;
+            z-index: 9999;
+            
+        }
+
+        .no {
+            opacity: 0;
+            transition: 0.7s ease;
+        }
+
+        @media (max-width: 500px) {
+            .bank p {
+                font-size: 34px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .text-element {
+                font-size: 24px;
+                margin: 0 1.5rem;
+            }
+
+            .text-element2 {
+                font-size: 24px;
+                margin: 0 1.5rem;
+            }
+        }
+
+        /* Additional styles for kinetic typography effects */
+        .bg-color-change {
+            animation: bg-color-change 10s infinite alternate ease-in-out;
+        }
+
+        .text-color-change {
+            animation: text-color-change 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes bg-color-change {
+            0% {
+                background-color: #f8f9fa;
+            }
+
+            50% {
+                background-color: #ced4da; /* Updated background color */
+            }
+
+            100% {
+                background-color: #f8f9fa;
+            }
+        }
+
+        @keyframes text-color-change {
+            0% {
+                color: #495057;
+            }
+
+            50% {
+                color: #6c757d; /* Updated text color */
+            }
+
+            100% {
+                color: #495057;
+            }
+        }
+
+        video {
+            z-index: 999;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+        }
+
+        .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 18px;
+    height: 130%;
+    width: 100%;
+    background: #ced4da;
+    display: none;
+    z-index: 99999;
+    animation: move3 1.3s ease forwards, next 0.5s 1s ease forwards;
+
+}
+
+#layover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 130%;
+    width: 100%;
+    background: #000;
+    display: none;
+    z-index: 999999;
+    animation: move3 1.4s 0.3s ease forwards;
+    transform: translateY(150%);
+}
+
+
+
+@keyframes next{
+
+    to{
+        width: 100%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+
+
+
+@keyframes move3{
+    from{
+        transform: translateY(150%);
+
+
+    }
+
+    to{
+        transform: translateY(-10%);
+    }
+}
+
+#loading {
+    content: url('data:image/png;base64,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');
+    animation: loading  1s steps(12) infinite;
+    width: 10vw;
+    position: fixed;
+    top: calc(50vh - 5vw);
+    left: 45vw;
+      scale:0.14;
+      opacity: 0.8;
+      color: #495057;
+  }
+  
+  @keyframes loading {
+    from  {transform: rotate(0deg);}
+    to    {transform: rotate(360deg);}
+  }
+  
+
+  
+@keyframes dots {
+  0% {
+    content: "";
+    opacity: 0;
+  }
+  10% {
+    content: ".";
+    opacity: 1;
+    animation-timing-function: ease-in-out;
+  }
+  30% {
+    content: ".";
+    opacity: 1;
+  }
+  40% {
+    content: "..";
+    opacity: 1;
+    animation-timing-function: ease-in-out;
+  }
+  60% {
+    content: "..";
+    opacity: 1;
+  }
+  70% {
+    content: "...";
+    opacity: 1;
+    animation-timing-function: ease-in-out;
+  }
+  90% {
+    content: "...";
+    opacity: 1;
+  }
+  100% {
+    content: "";
+    opacity: 0;
+  }
+}
+
+.loading-dots::after {
+  content: "";
+  animation: dots 3.5s infinite;
+  display: inline-block;
+  width: 1em;
+  font-size: 40px;
+  text-align: left;
+
+  opacity: 1;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div class="buritto bg-color-change ">
+            <div class="animation-container text-color-change">
+                <div class="text-section">
+                    <span class="text-element word-spaced">A</span>
+                    <span class="text-element word-spaced">Swift</span>
+                    <span class="text-element word-spaced">Developer</span>
+                </div>
+                <div class="text-section">
+                    <span class="text-element word-spaced">That</span>
+
+                </div>
+                <div class="text-section">
+                    <span class="text-element word-spaced">You</span>
+                    <span class="text-element word-spaced">Might</span>
+                    <span class="text-element word-spaced">Need</span>
+                </div>
+                <div class="text-section">
+                    <span class="text-element word-spaced">To</span>
+                    <span class="text-element word-spaced">Take</span>
+                    <span class="text-element word-spaced">Your</span>
+                    <span class="text-element word-spaced">Ideas</span>
+                </div>
+                <div class="text-section">
+                    <span class="text-element word-spaced">To</span>
+                    <span class="text-element word-spaced">The</span>
+                    <span class="text-element word-spaced">Next</span>
+                    <span class="text-element word-spaced">Level</span>
+                </div>
+                <div class="text-section">
+                    <span class="text-element word-spaced">Count</span>
+                    <span class="text-element word-spaced">Each</span>
+                    <span class="text-element word-spaced">Second</span>
+                </div>
+                <div class="text-section">
+                    <span class="text-element word-spaced">Why?</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">Because<span class="loading-dots"></span></span>
+                </div>
+                <div class="text-section">
+                    <span class="text-element word-spaced">I</span>
+                    <span class="text-element word-spaced">Create</span>
+                    <span class="text-element word-spaced">Memories</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">Create</span>
+                    <span class="text-element word-spaced">Illusions</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">Create</span>
+                    <span class="text-element word-spaced">The</span>
+                    <span class="text-element word-spaced">Future</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">Make</span>
+                    <span class="text-element word-spaced">Things</span>
+                    <span class="text-element word-spaced">Work</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">The</span>
+                    <span class="text-element word-spaced">Right</span>
+                    <span class="text-element word-spaced">Way</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">That's</span>
+                    <span class="text-element word-spaced">My</span>
+                    <span class="text-element word-spaced">Way</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">One</span>
+                    <span class="text-element word-spaced">More</span>
+                    <span class="text-element word-spaced">Thing</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">This</span>
+                    <span class="text-element word-spaced">Really</span>
+                    <span class="text-element word-spaced">Isn't</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">A</span>
+                    <span class="text-element word-spaced">Video</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">It's</span>
+                    <span class="text-element word-spaced">Pure</span>
+                    <span class="text-element word-spaced">Code</span>
+                    <span class="text-element word-spaced">; )</span>
+                </div>
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">So</span>
+                </div>
+
+
+                <div class="text-section">
+                    <span class="text-element word-spaced">Don't</span>
+                    <span class="text-element word-spaced">Just</span>
+                    <span class="text-element word-spaced">Live</span>
+                    <span class="text-element word-spaced">In</span>
+                    <span class="text-element word-spaced">The</span>
+                    <span class="text-element word-spaced">Moment</span>
+                </div>
+
+                <div class="text-section2">
+                    <span class="text-element2 word-spaced">Create</span>
+                    <span class="text-element2 word-spaced">The</span>
+                    <span class="text-element2 word-spaced">Moment.</span>
+                </div>
+            </div>
+
+
+            <video autoplay muted id="myAudio" src="videoplayback.m4a"></video>
+        </div>
+
+    </div>
+
+    <div id="overlay" class="overlay bg-color-change ">
+        <div id="loading"></div>
+        
+    
+    <div class="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    </div>
+       
+       <div id="layover"></div>
+
+    <script>
+        window.onload = function() {
+            var videoElement = document.getElementById("myAudio");
+            videoElement.muted = false; // Unmute the video
+
+            // Play the video and handle the promise
+            var playPromise = videoElement.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(_ => {
+                        // Autoplay started successfully
+                        handleVolumeTransition(videoElement);
+                    })
+                    .catch(error => {
+                        // Autoplay was prevented, handle the situation here
+                        console.error("Autoplay was prevented. Error:", error);
+                    });
+            } else {
+                // Older browser that doesn't support promises for play()
+                handleVolumeTransition(videoElement);
+            }
+        }
+
+        function handleVolumeTransition(videoElement) {
+            videoElement.volume = 0; // Set initial volume to 0
+
+            // Gradually increase the volume over 2 seconds
+            var volumeInterval = setInterval(function() {
+                if (videoElement.volume < 1) {
+                    videoElement.volume += 0.1;
+                } else {
+                    clearInterval(volumeInterval);
+                }
+            }, 200); // Increase volume every 200 milliseconds
+        }
+
+        // Add event listener for toggle sound button
+        document.getElementById("toggleSound").addEventListener("click", function() {
+            var videoElement = document.getElementById("myAudio");
+            videoElement.muted = !videoElement.muted;
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+    <script>
+        const textSections = document.querySelectorAll('.text-section');
+        const textSection = document.querySelectorAll('.text-section2');
+
+        // Variable to keep track of total animation time
+        let totalAnimationTime = 0;
+
+        textSections.forEach((section, index) => {
+            const textElements = section.querySelectorAll('.text-element');
+
+            const tl = gsap.timeline({
+                delay: index * 1.5, // Decreased delay between sections for faster transitions
+                onStart: () => gsap.to(section, { opacity: 1 }), // Make section visible when animation starts
+                onComplete: () => gsap.to(section, { opacity: 0 }) // Hide section when animation completes
+            });
+
+            tl.fromTo(
+                textElements,
+                { opacity: 0, y: 50 },
+                { opacity: 1, y: 0, ease: "power4.out", stagger: 0.1, duration: 0.5 } // Reduced animation duration
+            ).to(
+                textElements,
+                { opacity: 0, y: -50, ease: "power4.in", stagger: 0.1, duration: 0.5 }, // Reduced animation duration
+                "+=0.25" // Reduced time before fading out
+            );
+
+            // Add the duration of this timeline to the total animation time
+            totalAnimationTime += tl.duration();
+        });
+
+        // After all textSections animations are complete, animate textSection
+        gsap.to(textSection, {
+            opacity: 1,
+            delay: totalAnimationTime, // Start textSection animation after all other animations
+            onComplete: () => {
+                // Your animation for text-section2 here
+                const tl = gsap.timeline();
+
+                textSection.forEach((section, index) => {
+                    const textElements = section.querySelectorAll('.text-element2');
+
+                    tl.fromTo(
+                        textElements,
+
+                        { opacity: 1, y: 0, ease: "power4.out", stagger: 0.1, duration: 0.5 } // Reduced animation duration
+                    );
+                });
+            }
+        });
+    </script>
+
+<script>
+    function navigateToHome() {
+        var overlay = document.getElementById('overlay');
+        var layover = document.getElementById('layover');
+        overlay.style.display = 'block';
+        layover.style.display = 'block';
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 1300); 
+
+    }
+
+    var preloadPage = new Image();
+    preloadPage.src = 'index.html';
+</script>
+</body>
+
+</html>

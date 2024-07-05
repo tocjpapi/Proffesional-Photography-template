@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="view-transition" content="same-origin" />
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "#0d0d0d">
+    <meta content='#0d0d0d' name='theme-color'/> 
+    <title>Portfolio for CJ</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+    
+    <div class="div">
+        <div class="inner">
+            <div class="menubtn" id="menubtn" onclick="menu()">
+                <p><span>●</span> Menu</p>
+            </div>
+
+            <div class="mainmenu" id="mainmenu">
+                <div class="content">
+                    <div class="menus"> Home</div>
+                    <div class="menus">Work</div>
+                    <div class="menus">About</div>
+                    <div class="menus">Contact</div>
+                </div>
+
+ 
+            </div>
+
+
+            <div class="atthetop">
+                <div class="flex1">
+                    <div class="text"><p>Portfolio</p></div>
+                    <div class="text" id="load-about"><p onclick="navigateToAbout()">About</p></div>
+                    <div class="text"><p onclick="navigateToContact()">Contact</p></div>
+                </div>
+                
+                <div class="flex2">
+                    <div class="text2"><p>Frontend Developer</p></div>
+                    <div class="text" onclick="navigateToHome()""><p>CJ Crafted ®</p></div>
+      
+                </div>
+            </div>
+
+            <div class="titletext">
+
+                <p class="deux">Cr</p>
+
+            </div>
+<div class="side">
+    <p>Making Digital Masterpieces</p>
+</div>
+
+<div class="leftie">
+    <p>Please Scroll </p>
+</div>
+        </div>
+    </div>
+
+
+    <div class="div">
+        <div class="inner">
+
+
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1514136649217-b627b4b9cfb2?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+            </div>
+            <div class="flex3">
+                <div class="text2"><p>Case One</p></div>
+                <div class="text3" style="overflow: hidden;"><p class="fade-bim">Design & Development</p></div>
+
+            </div>
+            
+
+            <div class="side2">
+                <p class="fade-bim">Upscale Synergy</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="div">
+        <div class="inner">
+            <div class="project">
+                <div class="flex3">
+                    <div class="text2"><p>Case Two</p></div>
+                    <div class="text3" style="overflow: hidden;"><p class="fade-bim">Design & Development</p></div>
+    
+                </div>
+
+                <img src="https://images.unsplash.com/photo-1554022547-34519256a1da?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+            </div>
+            <div class="side2">
+                <p class="fade-bim">We Are Élanique ®</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="div">
+        <div class="inner">
+            <div class="project">
+            <img src="https://images.unsplash.com/photo-1598213900396-01f298d56d7d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+            </div>
+            <div class="flex3">
+                <div class="text2"><p>Case Three</p></div>
+                <div class="text3" style="overflow: hidden;"><p class="fade-bim">Design & Development</p></div>
+
+            </div>
+       
+ 
+
+            <div class="side2">
+                <p class="fade-bim">The Art of Emergence</p>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    <div class="div">
+        <div class="inner">
+            <div class="project">
+                <img src="https://images.unsplash.com/photo-1662580946467-9279de61ed99?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+            </div>
+
+            <div class="flex3">
+                <div class="text2"><p>Case Four</p></div>
+                <div class="text3" style="overflow: hidden;"><p class="fade-bim">Design & Interaction</p></div>
+
+            </div>
+
+            <div class="side2">
+                <p class="fade-bim">Human Interaction</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay">
+        <div id="loading"></div>
+        
+    
+    <div class="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    </div>
+       
+       <div id="layover"></div>
+    
+          
+    <script>
+        function navigateToAbout() {
+            var overlay = document.getElementById('overlay');
+            var layover = document.getElementById('layover');
+            overlay.style.display = 'block';
+            layover.style.display = 'block';
+            setTimeout(function() {
+                window.location.href = 'about.html';
+            }, 1300); 
+    
+        }
+    
+        var preloadPage = new Image();
+        preloadPage.src = 'about.html';
+    </script>
+
+<script>
+    function navigateToContact() {
+        var overlay = document.getElementById('overlay');
+        var layover = document.getElementById('layover');
+        overlay.style.display = 'block';
+        layover.style.display = 'block';
+        setTimeout(function() {
+            window.location.href = 'contact.html';
+        }, 1300); 
+
+    }
+
+    var preloadPage = new Image();
+    preloadPage.src = 'contact.html';
+</script>
+
+<script>
+    function navigateToHome() {
+        var overlay = document.getElementById('overlay');
+        var layover = document.getElementById('layover');
+        overlay.style.display = 'block';
+        layover.style.display = 'block';
+        setTimeout(function() {
+            window.location.href = 'index.html';
+        }, 1300); 
+
+    }
+
+    var preloadPage = new Image();
+    preloadPage.src = 'index.html';
+</script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menubtn = document.getElementById('menubtn');
+            var atthetop = document.querySelector('.atthetop');
+        
+            // Hide the menubtn for the first 0.7 seconds
+            setTimeout(function() {
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            menubtn.classList.remove('show');
+                            menubtn.classList.add('hide');
+                        } else {
+                            menubtn.classList.remove('hide');
+                            menubtn.classList.add('show');
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+        
+                observer.observe(atthetop);
+                
+                // Check the initial scroll position
+                if (window.scrollY > 0) {
+                    menubtn.classList.add('show');
+                }
+            }, 0); // 700 milliseconds delay
+        });
+        
+        
+        </script>
+
+
+   
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+<script>
+  const lenis = new Lenis({
+  duration: 1,
+  easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+  direction: "vertical",
+  gestureDirection: "vertical",
+  smooth: true,
+  smoothTouch: false,
+  touchMultiplier: 2,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+</script>
+
+<script>
+    document.addEventListener('scroll', function() {
+        const projects = document.querySelectorAll('.project img');
+        let scrollPosition = window.pageYOffset;
+        
+        projects.forEach(project => {
+            let speed = 0.3; 
+            project.style.transform = `translateY(${scrollPosition * speed}px)`;
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+           // Function to check if an element is in viewport
+  function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+  }
+  
+  // Function to handle intersection
+  function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.classList.add('animated'); // Add your animation class here
+          observer.unobserve(entry.target);
+      }
+  });
+  }
+  
+  // Intersection Observer options
+  var options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.2 // Adjust threshold as needed
+  };
+  
+  // Create Intersection Observer
+  var observer = new IntersectionObserver(handleIntersection, options);
+  
+  // Select elements to be observed
+  var elementsToObserve = document.querySelectorAll('.slide-up, .fade-bim'); // Select elements with animation classes
+  
+  // Observe each selected element
+  elementsToObserve.forEach(el => {
+  observer.observe(el);
+  });
+  
+  // Check if elements are already in viewport on page load
+  window.addEventListener('load', function() {
+  elementsToObserve.forEach(el => {
+      if (isElementInViewport(el)) {
+          el.classList.add('animated'); // Add your animation class here
+      }
+  });
+  });
+  
+  // Check if elements are in viewport on scroll
+  window.addEventListener('scroll', function() {
+  elementsToObserve.forEach(el => {
+      if (isElementInViewport(el)) {
+          el.classList.add('animated'); // Add your animation class here
+      }
+  });
+  });
+  
+  
+    })
+  
+</script>
+
+    
+</body>
+</html>
