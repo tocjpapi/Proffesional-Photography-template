@@ -3,8 +3,15 @@
   @font-face {
     font-family: 'TestFont';
     src: url('test.woff2') format('woff2');
-
 }
+
+
+@font-face {
+  font-family: 'Sf pro text';
+  src: url('SFProDisplay-Light.woff2') format('woff2');
+}
+
+
 
   
   
@@ -50,6 +57,7 @@
 
   p{
     font-weight: 350;
+
   }
   
   

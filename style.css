@@ -6,6 +6,16 @@
 
 }
 
+
+
+@font-face {
+  font-family: 'Sf pro text';
+  src: url('SFProDisplay-Light.woff2') format('woff2');
+}
+
+
+
+  
   
   
   
@@ -572,6 +582,7 @@ font-size: small;
 
 .copy p{
     line-height: 150%;
+    font-weight: 500;
 }
 
 
